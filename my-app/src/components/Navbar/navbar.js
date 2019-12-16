@@ -3,7 +3,7 @@ import Logo from "../MainPage/logo";
 class Navbar extends Component {
     render() {
         return (
-            <div>
+            <div className="main-page-navbar">
                 <Logo/>
             </div>
         );

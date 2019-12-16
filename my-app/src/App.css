@@ -8,9 +8,14 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-.main-page-navbar{
+
+.navbar-logo-container{
   display: flex;
   color: white;
+  margin-left: 30px;
+}
+.logo-info{
+  margin: 15px;
 }
 .main-page-navbar-logo{
   width: 30px;
@@ -22,6 +27,19 @@
   text-align: center;
   margin: 20vh 0;
 }
-
-
+.buttons-container{
+  display: flex;
+width: 460px;
+  margin: 0 auto;
+}
+.main-page-buttons{
+  margin: 0 15px;
+  width: 200px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: white;
+  color: blue;
+  font-size: 17px;
+  font-weight: bold;
+}
 
