@@ -61,8 +61,8 @@ function Deck() {
         };
       });
 
-      if (!down && gone.size === data.length)
-        setTimeout(() => gone.clear() || set(i => to(i)), 600);
+      // if (!down && gone.size === data.length)
+      //   setTimeout(() =>  set(i => to(i)), 600);
     }
   );
 
@@ -77,6 +77,21 @@ function Deck() {
       trans={trans}
       data={data}
       bind={bind}
+      mousedown={(i)=>{
+        console.log(i)
+        let deck =document.querySelectorAll(".deck")
+        if(deck[i].style.transform[12]=="-"){
+          document.querySelectorAll(`.messageLike`)[i].style.opacity="1"
+          document.querySelectorAll(`.messageDislike`)[i].style.opacity="0"
+        }else if(parseInt(deck[i].style.transform[12])>0){
+          document.querySelectorAll(`.messageDislike`)[i].style.opacity="1"
+          document.querySelectorAll(`.messageLike`)[i].style.opacity="0"
+        }else if(parseInt(deck[i].style.transform[12])==0){
+          document.querySelectorAll(`.messageDislike`)[i].style.opacity="0"
+          document.querySelectorAll(`.messageLike`)[i].style.opacity="0"
+        }
+
+      }}
       mouseenter={(a,b)=>{
         gone.add(a)
         let likes =document.querySelectorAll(`.messageLike`)
@@ -85,19 +100,19 @@ function Deck() {
         
         if(b=="Like"){
           
-          likes.forEach(x=>x.style.opacity="1")
-          dislikes.forEach(x=>x.style.opacity="0")
+          likes[a].classList.add("opacityOne")
+          dislikes[a].classList.remove("opacityOne")
         }else{
-          likes.forEach(x=>x.style.opacity="0")
-          dislikes.forEach(x=>x.style.opacity="1")
+          likes[a].classList.remove("opacityOne")
+          dislikes[a].classList.add("opacityOne")
         }
       }}
       mouseleave={(a,b)=>{
         let likes =document.querySelectorAll(`.messageLike`)
         let dislikes =document.querySelectorAll(`.messageDislike`)
         console.log(gone)
-          likes.forEach(x=>x.style.opacity="0")
-          dislikes.forEach(x=>x.style.opacity="0")
+          likes[a].classList.remove("opacityOne")
+          dislikes[a].classList.remove("opacityOne")
      
       }}
     />

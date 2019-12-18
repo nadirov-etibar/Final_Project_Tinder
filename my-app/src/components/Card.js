@@ -12,11 +12,12 @@ class Card extends React.Component {
 
  
   render() {
-    const { i, x, y, rot, scale, trans, bind, data ,mouseenter,mouseleave } = this.props;
+    const { i, x, y, rot, scale, trans, bind, data ,mouseenter,mouseleave,mousedown } = this.props;
     const { name, age, distance, text, pics } = data[i];
 
     return (
       <animated.div 
+      onMouseMove={()=>this.props.mousedown(this.props.i)}
       className="deck"
         key={i}
         style={{
@@ -33,7 +34,9 @@ class Card extends React.Component {
           }}
         >
           <div className="card">
-            <Carousel >
+            <Carousel 
+            withoutControls = "true"
+            >
               {pics.map((pic, index) => (
                 <img src={pic} key={index} alt="profilePicture" />
               ))}
