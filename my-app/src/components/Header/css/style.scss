@@ -1,0 +1,17 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+
+  &__account{
+    fill: #dadfe6;
+  }
+
+  &__message{
+    fill: #dadfe6;
+  }
+
+  &__active{
+    fill: blue;
+  }
+
+}
