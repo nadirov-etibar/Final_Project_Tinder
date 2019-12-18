@@ -10,7 +10,7 @@ class Button extends Component {
                 <path className="Fill($c-secondary)"
                       d="M17.079 2c-.41 0-.81.158-1.125.463l-2.23 2.229 5.574 5.583 2.229-2.208c.63-.641.63-1.64 0-2.25l-3.334-3.354A1.605 1.605 0 0 0 17.08 2m-4.101 3.438L4.46 13.966l2.691.295.19 2.408 2.397.179.305 2.691 8.518-8.527M3.84 14.944L2 21.98l7.045-1.882-.252-2.272-2.43-.178-.188-2.44"></path>
             </svg>,
-            camera: <svg className="Sq(32px) Sq(28px)--xs" viewBox="0 0 24 24" width="24px" height="24px"
+            camera: <svg className="Sq(32px) Sq(28px)--xs profile__camera" viewBox="0 0 24 24" width="24px" height="24px"
                          focusable="false" aria-hidden="true" role="presentation">
                 <path className="Fill(#fff)"
                       d="M4,4H7L9,2H15L17,4H20A2,2 0 0,1 22,6V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V6A2,2 0 0,1 4,4M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9Z"></path>

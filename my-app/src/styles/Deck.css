@@ -6,7 +6,7 @@ html,
 body {
   user-select: none;
   font-family: Raleway, sans-serif;
-  background-color: salmon;
+  background-color: #dadfe6;
   overflow-x: hidden;
 
 }

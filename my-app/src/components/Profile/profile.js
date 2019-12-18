@@ -8,6 +8,10 @@ class Profile extends Component {
         const btnClasses = {
             btn: 'profile__circle-btn'
         };
+
+        const btnBlueClass = {
+            btn: 'profile__circle-btn-blue'
+        };
         return (
             <div >
                 <Header/>
@@ -21,7 +25,7 @@ class Profile extends Component {
                         </div>
                         <div className={"profile__bottom"}>
                            <Button classes={btnClasses} value={"setting"}/>
-                           <Button classes={btnClasses} value={"camera"}/>
+                           <Button classes={btnBlueClass} value={"camera"}/>
                            <Button classes={btnClasses} value={"pencil"}/>
                         </div>
                     </div>
