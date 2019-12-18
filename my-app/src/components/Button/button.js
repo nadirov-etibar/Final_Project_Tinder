@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import "./css/style.scss"
 
 class Button extends Component {
 
@@ -21,13 +22,20 @@ class Button extends Component {
             </svg>
 
         };
-        const {class_name, value, info=""}=this.props;
+        const {classes, value, info=""}=this.props;
+        const _CLASSES = {
+            btn: '',
+            info: '',
+            wrapper: 'btn-wrapper',
+            ...classes
+        };
+
         return (
-            <div>
-                <button className={class_name}>
+            <div className={_CLASSES.wrapper}>
+                <button className={_CLASSES.btn}>
                     {svg[value] || value}
                 </button>
-                {info!==""?<h2>{info}</h2>:null}
+                {info!==""?<h2 className={_CLASSES.info}>{info}</h2>:false}
             </div>
         );
     }
