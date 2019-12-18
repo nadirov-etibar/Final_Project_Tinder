@@ -1,0 +1,41 @@
+.profile{
+  &__img{
+    border-radius: 50%;
+    width: 20%;
+    height: 20%;
+  }
+
+  &__top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px;
+  }
+
+  &__info{
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__name{
+    color: blue;
+    font-size: 24px;
+    font-weight: 700;
+    margin-right: 10px;
+  }
+
+  &__age{
+    opacity: 1;
+    color: blue;
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+
+  &__circle-btn{
+    border-radius: 30px;
+    border: 1px solid blue;
+    color: blue;
+  }
+}
