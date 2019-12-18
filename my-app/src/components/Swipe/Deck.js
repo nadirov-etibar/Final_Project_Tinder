@@ -3,9 +3,9 @@ import { useSprings } from "react-spring/hooks";
 import { useGesture } from "react-with-gesture";
 
 import Card from "./Card";
-import data from "../data.js";
+import data from "../../data.js";
 
-import "../styles/Deck.css";
+import "./styles/Deck.css";
 
 const to = i => ({
   x: 0,
@@ -78,27 +78,30 @@ function Deck() {
       data={data}
       bind={bind}
       mousedown={(i)=>{
-        console.log(i)
+        let likes =document.querySelectorAll(`.messageLike`)
+        let dislikes =document.querySelectorAll(`.messageDislike`)
+
         let deck =document.querySelectorAll(".deck")
-        if(deck[i].style.transform[12]=="-"){
-          document.querySelectorAll(`.messageLike`)[i].style.opacity="1"
-          document.querySelectorAll(`.messageDislike`)[i].style.opacity="0"
+        if(deck[i].style.transform[12]==="-"){
+          likes[i].style.opacity="1"
+          dislikes[i].style.opacity="0"
         }else if(parseInt(deck[i].style.transform[12])>0){
-          document.querySelectorAll(`.messageDislike`)[i].style.opacity="1"
-          document.querySelectorAll(`.messageLike`)[i].style.opacity="0"
-        }else if(parseInt(deck[i].style.transform[12])==0){
-          document.querySelectorAll(`.messageDislike`)[i].style.opacity="0"
-          document.querySelectorAll(`.messageLike`)[i].style.opacity="0"
+          likes[i].style.opacity="0"
+          dislikes[i].style.opacity="1"
+        }else if(parseInt(deck[i].style.transform[12])===0){
+          dislikes[i].style.opacity="0"
+          likes[i].style.opacity="0"
         }
 
       }}
       mouseenter={(a,b)=>{
         gone.add(a)
+        console.log()
         let likes =document.querySelectorAll(`.messageLike`)
         let dislikes =document.querySelectorAll(`.messageDislike`)
-        console.log()
+
         
-        if(b=="Like"){
+        if(b==="Like"){
           
           likes[a].classList.add("opacityOne")
           dislikes[a].classList.remove("opacityOne")
@@ -110,7 +113,6 @@ function Deck() {
       mouseleave={(a,b)=>{
         let likes =document.querySelectorAll(`.messageLike`)
         let dislikes =document.querySelectorAll(`.messageDislike`)
-        console.log(gone)
           likes[a].classList.remove("opacityOne")
           dislikes[a].classList.remove("opacityOne")
      
