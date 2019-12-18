@@ -100,6 +100,7 @@ h5:last-of-type {
   border: none;
   bottom: -35px;
   color: white;
+  cursor: pointer;
   
 }
 .cardBtnLike{
@@ -109,4 +110,23 @@ h5:last-of-type {
 .cardBtnDislike{
   background-color: blue;
   right: 50px;
+}
+.messageDislike,.messageLike{
+  padding: 10px 15px;
+  color: white;
+  position: absolute;
+  top: 50px;
+  font-weight: 700;
+  border-radius: 20px;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.messageDislike{
+  right: 20px;
+  background-color: blue;
+}
+.messageLike{
+  left: 20px;
+  background-color: salmon;
 }

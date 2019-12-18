@@ -15,7 +15,6 @@ const to = i => ({
   delay: i * 100
 });
 const from = i => ({ rot: 0, scale: 1.5, y: -1000 });
-
 const trans = (r, s) =>
   `perspective(1500px) rotateX(30deg) rotateY(${r /
     10}deg) rotateZ(${r}deg) scale(${s})`;
@@ -78,12 +77,34 @@ function Deck() {
       trans={trans}
       data={data}
       bind={bind}
-      click={this}
+      mouseenter={(a,b)=>{
+        gone.add(a)
+        let likes =document.querySelectorAll(`.messageLike`)
+        let dislikes =document.querySelectorAll(`.messageDislike`)
+        console.log()
+        
+        if(b=="Like"){
+          
+          likes.forEach(x=>x.style.opacity="1")
+          dislikes.forEach(x=>x.style.opacity="0")
+        }else{
+          likes.forEach(x=>x.style.opacity="0")
+          dislikes.forEach(x=>x.style.opacity="1")
+        }
+      }}
+      mouseleave={(a,b)=>{
+        let likes =document.querySelectorAll(`.messageLike`)
+        let dislikes =document.querySelectorAll(`.messageDislike`)
+        console.log(gone)
+          likes.forEach(x=>x.style.opacity="0")
+          dislikes.forEach(x=>x.style.opacity="0")
+     
+      }}
     />
     
     </div>
     
-  ));
+  ))
 }
 
 export default Deck;

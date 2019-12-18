@@ -2,13 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import { animated, interpolate } from "react-spring/hooks";
 import Carousel from "nuka-carousel";
-
+ 
 class Card extends React.Component {
+  constructor(props){
+    super(props);
+    this.props =props
+    
+  }
 
-  
-
+ 
   render() {
-    const { i, x, y, rot, scale, trans, bind, data } = this.props;
+    const { i, x, y, rot, scale, trans, bind, data ,mouseenter,mouseleave } = this.props;
     const { name, age, distance, text, pics } = data[i];
 
     return (
@@ -39,8 +43,14 @@ class Card extends React.Component {
             <h2>{age}</h2>
             <h5>{distance}</h5>
             <h5>{text}</h5>
-            <button className="cardBtnLike" onClick={()=>console.log(this)}>Like</button>
-          <button className="cardBtnDislike" >Dislike</button>
+            <span className="messageDislike">DISLIKE</span>
+            <span className="messageLike">LIKE</span>
+            <button className="cardBtnLike"  
+            onMouseLeave={()=>this.props.mouseleave(this.props.i,"Like")}
+            onMouseEnter={()=>this.props.mouseenter(this.props.i,"Like")}>Like</button>
+          <button className="cardBtnDislike" 
+          onMouseLeave={()=>this.props.mouseleave(this.props.i,"Dislike")}
+          onMouseEnter={()=>this.props.mouseenter(this.props.i,"Dislike")}>Dislike</button>
           </div>
         </animated.div>
         
