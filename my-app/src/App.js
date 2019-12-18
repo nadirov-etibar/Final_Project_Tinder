@@ -14,9 +14,8 @@ function App() {
 
       {/*<MainPage/>*/}
       {/*<Profile/>*/}
-      {/*<Register/>*/}
-      {/*<Modal/>*/}
-      <Profile/>
+      <Register/>
+      <Modal/>
       {/*<Deck />*/}
 
     </div>

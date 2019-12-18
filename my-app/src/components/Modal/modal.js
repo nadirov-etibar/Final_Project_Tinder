@@ -4,6 +4,9 @@ import Button from "../Button/button";
 import "./modal.scss"
 export default class Modal extends React.Component {
     render() {
+        const btnClasses = {
+            btn: 'register__btn'
+        };
         return (
             <div className={"register"}>
                 <svg className="" viewBox="0 0 24 24" width="24px" height="24px" focusable="false"
@@ -28,7 +31,7 @@ export default class Modal extends React.Component {
                         <Input class_name={"register__form-inputs register__all-inputs"} type={'password'} placeholder={"Password"} id={'pass'}/>
                     </div>
                     </form>
-                <Button value={"CONTINUE"} class_name={"register__btn"}/>
+                <Button value={"CONTINUE"} classes={btnClasses}/>
             </div>
         )
     }

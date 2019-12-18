@@ -5,6 +5,9 @@ import "./register.scss";
 import "./media_register.scss"
 class Register extends Component {
     render() {
+        const btnClasses = {
+            btn: 'register__btn'
+        };
         return (
             <div className={"register"}>
                 <div>
@@ -48,7 +51,7 @@ class Register extends Component {
                         <Input type={'file'} id={'file'}/>
                     </div>
                 </form>
-                <Button value={"CONTINUE"} class_name={"register__btn"}/>
+                <Button value={"CONTINUE"} classes={btnClasses}/>
             </div>
         );
     }
