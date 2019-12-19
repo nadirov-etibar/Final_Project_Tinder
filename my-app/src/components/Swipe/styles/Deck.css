@@ -45,6 +45,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4),
     0 10px 10px -10px rgba(50, 50, 73, 0.3);
+    transition: all 0.4s;
 }
 
 img {
@@ -97,18 +98,21 @@ h5:last-of-type {
 .cardBtnLike,.cardBtnDislike{
   position: absolute;
   padding: 8px;
-  border: none;
   bottom: -35px;
   color: white;
   cursor: pointer;
   
 }
 .cardBtnLike{
-  background-color: salmon;
+  border: 1px solid salmon;
+  background-color: transparent;
+  color: salmon;
   left: 50px;
 }
 .cardBtnDislike{
-  background-color: blue;
+  border: 1px solid blue;
+  background-color: transparent;
+  color: blue;
   right: 50px;
 }
 .messageDislike,.messageLike{
@@ -124,12 +128,20 @@ h5:last-of-type {
 
 .messageDislike{
   right: 20px;
-  background-color: blue;
+  border: 3px solid blue;
+  background-color: rgba(255,255,255,0.6);
+  color: blue;
 }
 .messageLike{
   left: 20px;
-  background-color: salmon;
+  border: 3px solid salmon;
+  background-color: rgba(255,255,255,0.6);
+  color: salmon;
 }
 .opacityOne{
   opacity: 1 !important;
 }
+.transformLeft{
+  transform:translateX(-3000px) !important;
+}
+

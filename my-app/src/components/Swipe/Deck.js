@@ -57,7 +57,7 @@ function Deck() {
           rot,
           scale,
           delay: undefined,
-          config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 }
+          config: { friction: 50, tension: down ? 800 : isGone ? 400 : 500 }
         };
       });
 
@@ -99,10 +99,11 @@ function Deck() {
         console.log()
         let likes =document.querySelectorAll(`.messageLike`)
         let dislikes =document.querySelectorAll(`.messageDislike`)
-
+let deck =document.querySelectorAll(".deck >div")
         
         if(b==="Like"){
           
+        deck[i].classList.add("transformLeft")
           likes[a].classList.add("opacityOne")
           dislikes[a].classList.remove("opacityOne")
         }else{
@@ -110,13 +111,7 @@ function Deck() {
           dislikes[a].classList.add("opacityOne")
         }
       }}
-      mouseleave={(a,b)=>{
-        let likes =document.querySelectorAll(`.messageLike`)
-        let dislikes =document.querySelectorAll(`.messageDislike`)
-          likes[a].classList.remove("opacityOne")
-          dislikes[a].classList.remove("opacityOne")
-     
-      }}
+
     />
     
     </div>

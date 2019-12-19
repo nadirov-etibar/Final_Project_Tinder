@@ -12,7 +12,7 @@ class Card extends React.Component {
 
  
   render() {
-    const { i, x, y, rot, scale, trans, bind, data ,mouseenter,mouseleave,mousedown } = this.props;
+    const { i, x, y, rot, scale, trans, bind, data ,mouseenter,mousedown } = this.props;
     const { name, age, distance, text, pics } = data[i];
 
     return (
@@ -36,6 +36,7 @@ class Card extends React.Component {
           <div className="card">
             <Carousel 
             withoutControls = "true"
+            wrapAround="false"
             >
               {pics.map((pic, index) => (
                 <img src={pic} key={index} alt="profilePicture" />
@@ -49,11 +50,11 @@ class Card extends React.Component {
             <span className="messageDislike">DISLIKE</span>
             <span className="messageLike">LIKE</span>
             <button className="cardBtnLike"  
-            onMouseLeave={()=>this.props.mouseleave(this.props.i,"Like")}
-            onMouseEnter={()=>this.props.mouseenter(this.props.i,"Like")}>Like</button>
+           
+            onMouseDown={()=>this.props.mouseenter(this.props.i,"Like")}>Like</button>
           <button className="cardBtnDislike" 
-          onMouseLeave={()=>this.props.mouseleave(this.props.i,"Dislike")}
-          onMouseEnter={()=>this.props.mouseenter(this.props.i,"Dislike")}>Dislike</button>
+         
+          onMouseDown={()=>this.props.mouseenter(this.props.i,"Dislike")}>Dislike</button>
           </div>
         </animated.div>
         
