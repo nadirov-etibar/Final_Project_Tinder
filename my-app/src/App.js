@@ -1,18 +1,46 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import logo from './logo.svg';
-// import './App.css';
+import './App.css';
 import MainPage from "./components/MainPage/mainPage";
 import Profile from "./components/Profile/profile";
 import Deck from "./components/Swipe/Deck";
+import Register from "./components/Register/register";
+import Modal from "./components/Modal/modal.js";
+import Header from "./components/Header/header";
+
+
 
 function App() {
   return (
-    <div className="App"> 
-      {/*<MainPage/>*/}
-      {/* <Profile/> */}
-      <Deck />
-    
+<Router>
+
+
+    <div className="App">
+<Switch>
+          <Route exact path="/">
+             <MainPage/>
+             <Modal/>
+          </Route>
+          <Route path="/profile">
+             <Profile/>
+          </Route>
+          <Route path="/register">
+            <Register/>
+          </Route>
+          <Route path="/swipe">
+            <Header/>
+            <Deck />
+          </Route>
+        </Switch>
+
     </div>
+    </Router>
   );
 }
 
