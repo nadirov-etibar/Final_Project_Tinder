@@ -2,17 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 import { animated, interpolate } from "react-spring/hooks";
 import Carousel from "nuka-carousel";
-
+ 
 class Card extends React.Component {
+  constructor(props){
+    super(props);
+    this.props =props
+    
+  }
 
-  
-
+ 
   render() {
-    const { i, x, y, rot, scale, trans, bind, data } = this.props;
+    const { i, x, y, rot, scale, trans, bind, data ,mouseenter,mousedown } = this.props;
     const { name, age, distance, text, pics } = data[i];
 
     return (
       <animated.div 
+      onMouseMove={()=>this.props.mousedown(this.props.i)}
       className="deck"
         key={i}
         style={{
@@ -29,7 +34,10 @@ class Card extends React.Component {
           }}
         >
           <div className="card">
-            <Carousel >
+            <Carousel 
+            withoutControls = "true"
+            wrapAround="false"
+            >
               {pics.map((pic, index) => (
                 <img src={pic} key={index} alt="profilePicture" />
               ))}
@@ -39,8 +47,14 @@ class Card extends React.Component {
             <h2>{age}</h2>
             <h5>{distance}</h5>
             <h5>{text}</h5>
-            <button className="cardBtnLike" onClick={()=>console.log(this)}>Like</button>
-          <button className="cardBtnDislike" >Dislike</button>
+            <span className="messageDislike">DISLIKE</span>
+            <span className="messageLike">LIKE</span>
+            <button className="cardBtnLike"  
+           
+            onMouseDown={()=>this.props.mouseenter(this.props.i,"Like")}>Like</button>
+          <button className="cardBtnDislike" 
+         
+          onMouseDown={()=>this.props.mouseenter(this.props.i,"Dislike")}>Dislike</button>
           </div>
         </animated.div>
         

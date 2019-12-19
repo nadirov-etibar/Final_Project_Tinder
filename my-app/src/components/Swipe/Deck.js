@@ -3,9 +3,9 @@ import { useSprings } from "react-spring/hooks";
 import { useGesture } from "react-with-gesture";
 
 import Card from "./Card";
-import data from "../data.js";
+import data from "../../data.js";
 
-import "../styles/Deck.css";
+import "./styles/Deck.css";
 
 const to = i => ({
   x: 0,
@@ -15,7 +15,6 @@ const to = i => ({
   delay: i * 100
 });
 const from = i => ({ rot: 0, scale: 1.5, y: -1000 });
-
 const trans = (r, s) =>
   `perspective(1500px) rotateX(30deg) rotateY(${r /
     10}deg) rotateZ(${r}deg) scale(${s})`;
@@ -58,12 +57,12 @@ function Deck() {
           rot,
           scale,
           delay: undefined,
-          config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 }
+          config: { friction: 50, tension: down ? 800 : isGone ? 400 : 500 }
         };
       });
 
-      if (!down && gone.size === data.length)
-        setTimeout(() => gone.clear() || set(i => to(i)), 600);
+      // if (!down && gone.size === data.length)
+      //   setTimeout(() =>  set(i => to(i)), 600);
     }
   );
 
@@ -78,12 +77,46 @@ function Deck() {
       trans={trans}
       data={data}
       bind={bind}
-      click={this}
+      mousedown={(i)=>{
+        let likes =document.querySelectorAll(`.messageLike`)
+        let dislikes =document.querySelectorAll(`.messageDislike`)
+
+        let deck =document.querySelectorAll(".deck")
+        if(deck[i].style.transform[12]==="-"){
+          likes[i].style.opacity="1"
+          dislikes[i].style.opacity="0"
+        }else if(parseInt(deck[i].style.transform[12])>0){
+          likes[i].style.opacity="0"
+          dislikes[i].style.opacity="1"
+        }else if(parseInt(deck[i].style.transform[12])===0){
+          dislikes[i].style.opacity="0"
+          likes[i].style.opacity="0"
+        }
+
+      }}
+      mouseenter={(a,b)=>{
+        gone.add(a)
+        console.log()
+        let likes =document.querySelectorAll(`.messageLike`)
+        let dislikes =document.querySelectorAll(`.messageDislike`)
+let deck =document.querySelectorAll(".deck >div")
+        
+        if(b==="Like"){
+          
+        deck[i].classList.add("transformLeft")
+          likes[a].classList.add("opacityOne")
+          dislikes[a].classList.remove("opacityOne")
+        }else{
+          likes[a].classList.remove("opacityOne")
+          dislikes[a].classList.add("opacityOne")
+        }
+      }}
+
     />
     
     </div>
     
-  ));
+  ))
 }
 
 export default Deck;
