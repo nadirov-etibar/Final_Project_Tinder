@@ -6,6 +6,7 @@ import Profile from "./components/Profile/profile";
 import Register from "./components/Register/register";
 import Modal from "./components/Modal/modal.js";
 import Deck from "./components/Deck";
+import Edit from "./components/Edit/edit";
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
 
       {/*<MainPage/>*/}
       {/*<Profile/>*/}
-      <Register/>
-      <Modal/>
+      <Edit/>
+      {/*<Register/>*/}
+      {/*<Modal/>*/}
       {/*<Deck />*/}
 
     </div>
