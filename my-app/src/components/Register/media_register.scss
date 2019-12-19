@@ -1,0 +1,13 @@
+@media screen and (min-width: 768px) {
+  .register{
+    &__form{
+    flex-direction: row;
+  }
+    &__form-first{
+      margin-right: 50px;
+    }
+    &__form-inputs{
+      width: 280px;
+    }
+  }
+}
