@@ -3,16 +3,12 @@
   justify-content: space-between;
   background: white;
 
-  &__account{
-    fill: #dadfe6;
-  }
-
-  &__message{
-    fill: #dadfe6;
+  &__svg-grey{
+    fill: lightslategrey;
   }
 
   &__active{
-    fill: blue;
+    fill: cornflowerblue;
   }
 
 }

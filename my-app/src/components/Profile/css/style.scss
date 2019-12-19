@@ -24,7 +24,7 @@
   }
 
   &__name{
-    color: blue;
+    color: cornflowerblue;
     font-size: 24px;
     font-weight: 700;
     margin-right: 10px;
@@ -32,7 +32,7 @@
 
   &__age{
     opacity: 1;
-    color: blue;
+    color: cornflowerblue;
     font-weight: 700;
     font-size: 24px;
   }
@@ -40,22 +40,41 @@
 
   &__circle-btn{
     border-radius: 50%;
-    background: #dadfe6;
+    background: white;
     padding: 10px;
-    border: 1px solid #dadfe6;
+    border: 1px solid lightslategrey;
+    box-shadow: 0 0 1px 1px lightslategrey;
+    display: flex;
+    cursor: pointer;
   }
 
   &__camera{
-    fill: #dadfe6;
+    fill: white;
+  }
+
+  &__svg-blue{
+    fill: cornflowerblue;
   }
 
   &__circle-btn-blue{
     border-radius: 50%;
-    background: blue;
-    border: 1px solid blue;
+    background: cornflowerblue;
+    border: 1px solid cornflowerblue;
     position: relative;
+    display: flex;
+    cursor: pointer;
     top: 50px;
     padding: 10px;
+  }
+
+  &__info-btn-blue{
+    font-size: 14px;
+    color: cornflowerblue;
+    position: relative;
+    top: 50px;
+    text-transform: uppercase;
+    margin-right: 0;
+
   }
 
   &__bottom{
