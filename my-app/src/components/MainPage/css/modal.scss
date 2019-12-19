@@ -1,0 +1,70 @@
+.register {
+  &__form-modal {
+    display: flex;
+    flex-direction: column;
+  }
+  &__modal-header{
+    color: cornflowerblue;
+  }
+  &__modal-window{
+    border-radius: 3%;
+    outline:none;
+    position: fixed;
+    height: 500px;
+    width: 400px;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  &__close{
+    width: inherit;
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__close-element{
+    position: relative;;
+  }
+  &__close-element::before{
+    content: "\00a0\00a0\00a0\00a0\00a0";
+    border: 3px solid grey;
+    font-size: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  &__close-element::after{
+    content: "\00D7";
+    font-weight: bold;
+    position: absolute;
+    color: grey;
+    top: -16px;
+    right: 16px;
+    font-size: 40px;
+  }
+}
+.login {
+  display: flex;
+  flex-direction: column!important;
+  &__form{
+      display: flex;
+      flex-direction: column;
+  }
+  &__btn-block{
+    display: flex;
+    justify-content: center;
+  }
+  &__btn {
+    padding: 10px 15px;
+    border-radius: 18px;
+    border: none;
+    background-color: cornflowerblue;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    margin: 45px 0;
+  }
+}
+.modal > div:first-child{
+  background-color: rgba(0, 0, 0, 0.8) !important;
+
+}
