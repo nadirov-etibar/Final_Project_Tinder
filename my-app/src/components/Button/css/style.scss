@@ -1,3 +1,12 @@
 .btn-wrapper{
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-info{
+  color: cornflowerblue;
+  font-size: 14px;
+  margin-right: 0;
+  text-transform: uppercase;
 }
