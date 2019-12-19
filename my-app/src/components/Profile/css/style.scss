@@ -1,4 +1,9 @@
 .profile{
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background: white;
+  padding-bottom: 86px;
+
   &__img{
     border-radius: 50%;
     width: 20%;
@@ -10,7 +15,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 50px;
+    padding: 50px;
   }
 
   &__info{
@@ -19,7 +24,7 @@
   }
 
   &__name{
-    color: blue;
+    color: cornflowerblue;
     font-size: 24px;
     font-weight: 700;
     margin-right: 10px;
@@ -27,15 +32,54 @@
 
   &__age{
     opacity: 1;
-    color: blue;
+    color: cornflowerblue;
     font-weight: 700;
     font-size: 24px;
   }
 
 
   &__circle-btn{
-    border-radius: 30px;
-    border: 1px solid blue;
-    color: blue;
+    border-radius: 50%;
+    background: white;
+    padding: 10px;
+    border: 1px solid lightslategrey;
+    box-shadow: 0 0 1px 1px lightslategrey;
+    display: flex;
+    cursor: pointer;
+  }
+
+  &__camera{
+    fill: white;
+  }
+
+  &__svg-blue{
+    fill: cornflowerblue;
+  }
+
+  &__circle-btn-blue{
+    border-radius: 50%;
+    background: cornflowerblue;
+    border: 1px solid cornflowerblue;
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    top: 50px;
+    padding: 10px;
+  }
+
+  &__info-btn-blue{
+    font-size: 14px;
+    color: cornflowerblue;
+    position: relative;
+    top: 50px;
+    text-transform: uppercase;
+    margin-right: 0;
+
+  }
+
+  &__bottom{
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
   }
 }
