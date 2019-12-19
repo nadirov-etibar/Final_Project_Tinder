@@ -23,7 +23,7 @@ class Profile extends Component {
                         </div>
                         <div className={"profile__bottom"}>
                            <Button classes={btnClasses} value={"like"} info={"Like"}/>
-                            <form action="">
+                            <form action="" className={"profile__form"}>
                             <label htmlFor="file" className="profile__circle-btn-blue"><svg className="Sq(32px) Sq(28px)--xs profile__camera" viewBox="0 0 24 24" width="24px" height="24px"
                                                                                             focusable="false" aria-hidden="true" role="presentation">
                                 <path className="Fill(#fff)"
