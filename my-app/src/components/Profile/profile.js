@@ -12,7 +12,7 @@ class Profile extends Component {
 
         return (
             <div >
-                <Header/>
+                
                     <div className={"profile"}>
                         <div className={"profile__top"}>
                             <img src={require("./img/profile.jpg")} alt="" className={"profile__img"}/>

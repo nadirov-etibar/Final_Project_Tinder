@@ -32,6 +32,7 @@ function App() {
              <Modal/>
           </Route>
           <Route path="/profile">
+              <Header/>
              <Profile/>
           </Route>
           <Route path="/register">

@@ -1,8 +1,10 @@
 import React, {Component} from "react";
+
 import Input from "../Input/input";
 import Button from "../Button/button";
 import "./register.scss";
 import "./media_register.scss"
+import { Link } from "react-router-dom";
 class Register extends Component {
     render() {
         const btnClasses = {
@@ -51,7 +53,10 @@ class Register extends Component {
                         <Input type={'file'} id={'file'}/>
                     </div>
                 </form>
-                <Button value={"CONTINUE"} classes={btnClasses}/>
+                <Link to="/swipe">
+                    <Button value={"CONTINUE"} classes={btnClasses}/>
+                </Link>
+                
             </div>
         );
     }

@@ -1,4 +1,10 @@
 import React, {Component} from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 import Button from "../Button/button";
 import "./css/style.scss";
 class MainPage extends Component {
@@ -19,7 +25,9 @@ class MainPage extends Component {
                 </div>
                 <h1 className="main-page__header">Match. Chat. Date.</h1>
                 <div className={"main-page__button-center"}>
-                    <Button classes={btnClasses} value={"Sign Up"}/>
+                    <Link to="/register"><Button classes={btnClasses} value={"Sign Up"}/>
+                    </Link>
+                    
                     <Button classes={btnClasses} value={"Log in"}/>
                 </div>
             </div>
