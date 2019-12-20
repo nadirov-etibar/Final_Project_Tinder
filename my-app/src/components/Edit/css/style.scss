@@ -1,0 +1,97 @@
+.edit{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: white;
+  &__header{
+    text-transform: uppercase;
+    color: cornflowerblue;
+    margin: 40px 0;
+    font-size: 32px;
+  }
+  &__form{
+    display: flex;
+    flex-direction: row;
+  }
+  &__form-first{
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+  }
+  &__form-second{
+    display: flex;
+    flex-direction: column;
+  }
+  &__flex{
+    margin-top: 24px;
+    display: flex;
+  }
+  &__svg{
+    fill: #e0e4e9;
+    position: relative;
+    top: 35px;
+    left: 15px;
+    z-index: 1;
+  }
+  &__all-inputs{
+    padding: 15px 13px;
+    outline: none;
+    margin-bottom: 25px;
+    border: 2px solid transparent;
+    background-color: #f6f7fa;
+    border-radius: 8px;
+  }
+  &__form-inputs{
+    padding-left: 54px;
+    position: relative;
+    width: 240px;
+  }
+  &__gender{
+    padding: 15px 13px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    border: 2px solid #707d86;
+    margin-right: 10px;
+    outline: none;
+    background-color: white;
+  }
+  &__date{
+    width: 68px;
+    margin-right: 10px;
+    text-align: center;
+  }
+  &__file-upload {
+    margin-top: 24px;
+    width: 280px;
+    cursor: pointer;
+  }
+  &__all-inputs:focus{
+    border:2px solid #707d86;
+  }
+  &__gender:focus{
+    color: #424242;
+    border-color: #424242;
+    background-color: #efefef;
+  }
+  &__btn{
+    padding: 15px 15px;
+    border-radius: 18px;
+    border: none;
+    background-color: cornflowerblue;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    width: 200px;
+    margin: 45px 0;
+  }
+  &__btn:hover{
+    background-color: #e0e4e9;
+    color: cornflowerblue;
+  }
+  &__date:last-child{
+    margin-right: 0;
+  }
+}
