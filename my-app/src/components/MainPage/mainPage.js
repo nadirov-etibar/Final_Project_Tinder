@@ -1,4 +1,10 @@
 import React, {Component} from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 import Button from "../Button/button";
 import "./css/modal.scss";
 import "./css/style.scss";
@@ -27,7 +33,10 @@ export default function MainPage() {
                 </div>
                 <h1 className="main-page__header">Match. Chat. Date.</h1>
                 <div className={"main-page__button-center"}>
-                    <Button classes={btnClasses} value={"Sign Up"}/>
+
+                    <Link to="/register">
+                        <Button classes={btnClasses} value={"Sign Up"}/>
+                    </Link>
                     <Button classes={btnClasses} value={"Log in"} function_name={handleOpen}/>
                     <Modal
                         aria-labelledby="simple-modal-title"
@@ -62,7 +71,9 @@ export default function MainPage() {
                                     <Input class_name={"register__form-inputs register__all-inputs"} type={'password'} placeholder={"Password"} id={'pass'}/>
                                 </div>
                                 <div className={"login__btn-block"}>
-                                    <Input type={"submit"} value={"CONTINUE"} class_name={"login__btn"}/>
+                                    <Link to="/swipe"><Input type={"submit"} value={"CONTINUE"} class_name={"login__btn"}/>
+                                    </Link>
+                                    
                                 </div>
                             </form>
 

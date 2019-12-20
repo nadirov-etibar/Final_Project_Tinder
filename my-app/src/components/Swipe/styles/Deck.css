@@ -7,8 +7,11 @@ body {
   user-select: none;
   font-family: Raleway, sans-serif;
   background-color: cornflowerblue;
-  overflow-x: hidden;
+  overflow: hidden;
 
+}
+a{
+  text-decoration: none;
 }
 
 #root .main-page{
@@ -24,7 +27,7 @@ body {
 #root .deck {
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  top: 100px;
   will-change: transform;
   display: flex;
   align-items: center;
