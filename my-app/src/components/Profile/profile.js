@@ -1,8 +1,15 @@
 import React, {Component} from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 import Button from "../Button/button";
 import "./css/style.scss";
 import Header from "../Header/header";
 import Input from "../Input/input";
+
 
 class Profile extends Component {
     render() {
@@ -32,7 +39,10 @@ class Profile extends Component {
                             <Input type={'file'} id={'file'}/>
                             <h2 className={"profile__info-btn-blue"}>Upload Photo</h2>
                             </form>
-                           <Button classes={btnClasses} value={"pencil"} info={"Edit"}/>
+                            <Link to="/edit">
+                                <Button classes={btnClasses} value={"pencil"} info={"Edit"}/>
+                            </Link>
+                           
                         </div>
                     </div>
             </div>

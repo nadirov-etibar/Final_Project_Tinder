@@ -1,15 +1,11 @@
 import React, {Component} from "react";
 
 import Input from "../Input/input";
-import Button from "../Button/button";
 import "./register.scss";
 import "./media_register.scss"
 import { Link } from "react-router-dom";
 class Register extends Component {
     render() {
-        const btnClasses = {
-            btn: 'register__btn'
-        };
         return (
             <div className={"register"}>
                 <div>
@@ -52,10 +48,12 @@ class Register extends Component {
                         <label htmlFor="file" className="register__file-upload register__all-inputs">Upload From Computer</label>
                         <Input type={'file'} id={'file'}/>
                     </div>
+                    <div className={"login__btn-block"}>
+                    <Link to="/swipe">
+                        <Input type={"submit"} value={"CONTINUE"} class_name={"login__btn"}/>
+                        </Link>
+                    </div>
                 </form>
-                <Link to="/swipe">
-                    <Button value={"CONTINUE"} classes={btnClasses}/>
-                </Link>
                 
             </div>
         );

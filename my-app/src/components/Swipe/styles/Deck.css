@@ -7,8 +7,11 @@ body {
   user-select: none;
   font-family: Raleway, sans-serif;
   background-color: cornflowerblue;
-  overflow-x: hidden;
+  overflow: hidden;
 
+}
+a{
+  text-decoration: none;
 }
 
 #root .main-page{
@@ -26,7 +29,6 @@ body {
   width: 100vw;
   top: 100px;
   will-change: transform;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
