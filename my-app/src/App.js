@@ -12,7 +12,6 @@ import MainPage from "./components/MainPage/mainPage";
 import Profile from "./components/Profile/profile";
 import Deck from "./components/Swipe/Deck";
 import Register from "./components/Register/register";
-import Modal from "./components/Modal/modal.js";
 import Edit from "./components/Edit/edit";
 import Header from "./components/Header/header";
 
@@ -23,13 +22,11 @@ function App() {
       {/*<Profile/>*/}
       {/*<Edit/>*/}
       {/*<Register/>*/}
-      {/*<Modal/>*/}
       {/*<Deck />*/}
     <div className="App">
 <Switch>
           <Route exact path="/">
              <MainPage/>
-             <Modal/>
           </Route>
           <Route path="/profile">
              <Profile/>

@@ -23,7 +23,7 @@ class Button extends Component {
             </svg>
 
         };
-        const {classes, value, info=""}=this.props;
+        const {classes, value, info="", function_name}=this.props;
         const _CLASSES = {
             btn: '',
             info: 'btn-info',
@@ -33,7 +33,7 @@ class Button extends Component {
 
         return (
             <div className={_CLASSES.wrapper}>
-                <button className={_CLASSES.btn}>
+                <button className={_CLASSES.btn} onClick={function_name}>
                     {svg[value] || value}
                 </button>
                 {info!==""?<h2 className={_CLASSES.info}>{info}</h2>:false}

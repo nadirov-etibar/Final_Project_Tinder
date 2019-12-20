@@ -3,9 +3,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: white;
   &__header{
     text-transform: uppercase;
-    color: blue;
+    color: cornflowerblue;
     margin: 40px 0;
     font-size: 32px;
   }
@@ -27,7 +28,7 @@
     display: flex;
   }
   &__svg{
-    fill: #e0e4e9;
+    fill: lightslategray;
     position: relative;
     top: 35px;
     left: 15px;
@@ -44,16 +45,17 @@
   &__form-inputs{
     padding-left: 54px;
     position: relative;
-    width: 240px;
+    width: 280px;
   }
   &__gender{
     padding: 15px 13px;
     margin-bottom: 25px;
     border-radius: 8px;
-    border: 2px solid #707d86;
+    border: 2px solid grey;
     margin-right: 10px;
     outline: none;
     background-color: white;
+    color: grey;
   }
   &__date{
     width: 68px;
@@ -63,21 +65,23 @@
   &__file-upload {
     margin-top: 24px;
     width: 280px;
+    height: 49px;
     cursor: pointer;
+    color: grey;
   }
   &__all-inputs:focus{
     border:2px solid #707d86;
   }
   &__gender:focus{
     color: #424242;
-    border-color: #424242;
+    border-color: grey;
     background-color: #efefef;
   }
   &__btn{
     padding: 10px 15px;
     border-radius: 18px;
     border: none;
-    background-color: blue;
+    background-color: cornflowerblue;
     outline: none;
     cursor: pointer;
     font-weight: bold;
@@ -86,7 +90,7 @@
   }
   &__btn:hover{
     background-color: #e0e4e9;
-    color: blue;
+    color: cornflowerblue;
   }
   &__date:last-child{
     margin-right: 0;

@@ -2,12 +2,13 @@
   .register{
     &__form{
     flex-direction: row;
+      flex-wrap: wrap;
   }
-    &__form-first{
-      margin-right: 50px;
+    &__form>div {
+      flex: 50%;
     }
-    &__form-inputs{
-      width: 280px;
+    &__form>div:last-child {
+      flex:100%;
     }
   }
 }
