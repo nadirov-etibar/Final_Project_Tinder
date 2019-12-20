@@ -1,7 +1,9 @@
 import React, {Component} from "react";
+
 import Input from "../Input/input";
 import "./register.scss";
 import "./media_register.scss"
+import { Link } from "react-router-dom";
 class Register extends Component {
     render() {
         return (
@@ -47,10 +49,12 @@ class Register extends Component {
                         <Input type={'file'} id={'file'}/>
                     </div>
                     <div className={"login__btn-block"}>
+                    <Link to="/swipe">
                         <Input type={"submit"} value={"CONTINUE"} class_name={"login__btn"}/>
+                        </Link>
                     </div>
                 </form>
-
+                
             </div>
         );
     }
