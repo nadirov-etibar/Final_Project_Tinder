@@ -22,23 +22,20 @@
     justify-content: flex-end;
   }
   &__close-element{
-    position: relative;;
-  }
-  &__close-element::before{
-    content: "\00a0\00a0\00a0\00a0\00a0";
-    border: 3px solid grey;
-    font-size: 20px;
+    text-align: center;
+    border: 3px solid darkgrey;
+    width: 37px;
+    height: 37px;
     border-radius: 50%;
     margin-right: 10px;
+    margin-top: 10px;
+    transition-duration: .2s;
   }
-  &__close-element::after{
-    content: "\00D7";
-    font-weight: bold;
-    position: absolute;
-    color: grey;
-    top: -16px;
-    right: 16px;
-    font-size: 40px;
+  &__cross{
+    margin-top: 3px;
+  }
+  &__close-element:hover{
+    transform: rotate(-90deg);
   }
 }
 .login {
