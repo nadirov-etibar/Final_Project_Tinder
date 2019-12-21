@@ -12,7 +12,13 @@ import Input from "../Input/input";
 
 
 class Profile extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {imageUrl: ""}
+    }
+
     render() {
+        console.log(this.state.imageUrl);
         const btnClasses = {
             btn: 'profile__circle-btn'
         };
@@ -22,7 +28,7 @@ class Profile extends Component {
                 
                     <div className={"profile"}>
                         <div className={"profile__top"}>
-                            <img src={require("./img/profile.jpg")} alt="" className={"profile__img"}/>
+                            <img src={this.state.imageUrl} alt="" className={"profile__img"}/>
                             <div className={"profile__info"}>
                             <p className={"profile__name"}>Rauf</p>
                             <p className={"profile__age"}>21</p>
@@ -38,8 +44,14 @@ class Profile extends Component {
                             </svg>
                                 <div className={"profile__plus"}></div>
                             </label>
-                            <Input type={'file'} id={'file'}/>
-                            <h2 className={"profile__info-btn-blue"}>Upload Photo</h2>
+                                <Input
+                                    ref_name={"uploadImg"}
+                                    type={"file"}
+                                    name={"selectedFile"}
+                                    id={"file"}
+                                    onchange={this._onChange}
+                                />
+                                <h2 className={"profile__info-btn-blue"}>Upload Photo</h2>
                             </form>
                             <Link to="/edit">
                                 <Button classes={btnClasses} value={"pencil"} info={"Edit"}/>
@@ -49,6 +61,28 @@ class Profile extends Component {
                     </div>
             </div>
         );
+    }
+    _onChange = (e) => {
+
+        const file    = this.refs.uploadImg.files[0];
+        const reader  = new FileReader();
+
+        reader.onloadend = () => {
+            this.setState({
+                imageUrl: reader.result
+            })
+        };
+        if (file) {
+            reader.readAsDataURL(file);
+            this.setState({
+                imageUrl :reader.result
+            })
+        }
+        else {
+            this.setState({
+                imageUrl: ""
+            })
+        }
     }
 }
 

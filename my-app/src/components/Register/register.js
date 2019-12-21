@@ -50,7 +50,7 @@ class Register extends Component {
                     </div>
                     <div className={"login__btn-block"}>
                     <Link to="/swipe">
-                        <Input type={"submit"} value={"CONTINUE"} class_name={"login__btn"}/>
+                        <Input type={"submit"} value={"CONTINUE"} class_name={"login__btn"} disa1/>
                         </Link>
                     </div>
                 </form>
