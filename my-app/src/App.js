@@ -29,6 +29,7 @@ function App() {
              <MainPage/>
           </Route>
           <Route path="/profile">
+              <Header/>
              <Profile/>
           </Route>
           <Route path="/register">
