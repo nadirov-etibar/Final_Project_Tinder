@@ -8,18 +8,25 @@ import {
 import Button from "../Button/button";
 import "./css/style.scss";
 import Header from "../Header/header";
+import Modal from '@material-ui/core/Modal';
 import Input from "../Input/input";
 
 
-class Profile extends Component {
-    render() {
+export default function Profile() {
+
         const btnClasses = {
             btn: 'profile__circle-btn'
+        };
+        const [open, setOpen] = React.useState(false);
+        const handleOpen = () => {
+            setOpen(true);
+        };
+        const handleClose = () => {
+            setOpen(false);
         };
 
         return (
             <div >
-                
                     <div className={"profile"}>
                         <div className={"profile__top"}>
                             <img src={require("./img/profile.jpg")} alt="" className={"profile__img"}/>
@@ -29,7 +36,16 @@ class Profile extends Component {
                             </div>
                         </div>
                         <div className={"profile__bottom"}>
-                           <Button classes={btnClasses} value={"like"} info={"Like"}/>
+                           <Button classes={btnClasses} value={"like"} info={"Like"} function_name={handleOpen}/>
+                            <Modal
+                                aria-labelledby="simple-modal-title"
+                                aria-describedby="simple-modal-description"
+                                open={open}
+                                className={"modal"}
+                                onClose={handleClose}
+                            >
+                                <h2>this is modal page</h2>
+                            </Modal>
                             <form action="" className={"profile__form"}>
                             <label htmlFor="file" className="profile__circle-btn-blue"><svg className="Sq(32px) Sq(28px)--xs profile__camera" viewBox="0 0 24 24" width="24px" height="24px"
                                                                                             focusable="false" aria-hidden="true" role="presentation">
@@ -48,6 +64,3 @@ class Profile extends Component {
             </div>
         );
     }
-}
-
-export default Profile;
