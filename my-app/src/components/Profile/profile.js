@@ -14,19 +14,16 @@ import Input from "../Input/input";
 class Profile extends Component {
     constructor(props) {
         super(props);
-        this.state = {imageUrl: ""}
+        this.state = {
+            imageUrl: "",
+            open: false,
+            setOpen: false,
+        }
     }
 
     render() {
         const btnClasses = {
             btn: 'profile__circle-btn'
-        };
-        const [open, setOpen] = React.useState(false);
-        const handleOpen = () => {
-            setOpen(true);
-        };
-        const handleClose = () => {
-            setOpen(false);
         };
 
         return (
@@ -40,13 +37,13 @@ class Profile extends Component {
                             </div>
                         </div>
                         <div className={"profile__bottom"}>
-                           <Button classes={btnClasses} value={"like"} info={"Like"} function_name={handleOpen}/>
+                           <Button classes={btnClasses} value={"like"} info={"Like"} function_name={this.handleOpen}/>
                             <Modal
                                 aria-labelledby="simple-modal-title"
                                 aria-describedby="simple-modal-description"
-                                open={open}
+                                open={this.state.open}
                                 className={"modal"}
-                                onClose={handleClose}
+                                onClose={this.handleClose}
                             >
                                 <h2>this is modal page</h2>
                             </Modal>
@@ -58,19 +55,19 @@ class Profile extends Component {
                             </svg>
                                 <div className={"profile__plus"}></div>
                             </label>
-                                <Input
-                                    ref_name={"uploadImg"}
-                                    type={"file"}
-                                    name={"selectedFile"}
-                                    id={"file"}
-                                    onchange={this._onChange}
+                                <input
+                                    ref="uploadImg"
+                                    type="file"
+                                    name="selectedFile"
+                                    id="file"
+                                    onChange={this._onChange}
                                 />
                                 <h2 className={"profile__info-btn-blue"}>Upload Photo</h2>
                             </form>
                             <Link to="/edit">
                                 <Button classes={btnClasses} value={"pencil"} info={"Edit"}/>
                             </Link>
-                           
+
                         </div>
                     </div>
             </div>
@@ -97,7 +94,20 @@ class Profile extends Component {
                 imageUrl: ""
             })
         }
-    }
+    };
+
+    handleOpen = () => {
+        this.setState({
+            open: true,
+            setOpen: true
+        })
+    };
+    handleClose = () => {
+        this.setState({
+            open: false,
+            setOpen: false
+        })
+    };
 }
 
 export default Profile;
