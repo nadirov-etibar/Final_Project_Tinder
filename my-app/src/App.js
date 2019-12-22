@@ -14,39 +14,39 @@ import Deck from "./components/Swipe/Deck";
 import Register from "./components/Register/register";
 import Edit from "./components/Edit/edit";
 import Header from "./components/Header/header";
+import Message from "./components/Message/message";
 
 function App() {
-  return (
-<Router>
-      {/*<MainPage/>*/}
-      {/*<Profile/>*/}
-      {/*<Edit/>*/}
-      {/*<Register/>*/}
-      {/*<Deck />*/}
-    <div className="App">
-<Switch>
-          <Route exact path="/">
-             <MainPage/>
-          </Route>
-          <Route path="/profile">
-              <Header/>
-             <Profile/>
-          </Route>
-          <Route path="/register">
-            <Register/>
-          </Route>
-          <Route path="/swipe">
-            <Header/>
-            <Deck />
-          </Route>
-        <Route path="/edit">
-            <Header/>
-            <Edit />
-        </Route>
-        </Switch>
+    return (
+        <Router>
+            <div className="App">
+                <Switch>
+                    <Route exact path="/">
+                        <MainPage/>
+                    </Route>
+                    <Route path="/profile">
+                        <Header/>
+                        <Profile/>
+                    </Route>
+                    <Route path="/register">
+                        <Register/>
+                    </Route>
+                    <Route path="/swipe">
+                        <Header/>
+                        <Deck />
+                    </Route>
+                    <Route path="/edit">
+                        <Header/>
+                        <Edit />
+                    </Route>
+                    <Route path="/message">
+                        <Header/>
+                        <Message/>
+                    </Route>
+                </Switch>
 
-    </div>
-    </Router>
+                </div>
+            </Router>
   );
 }
 

@@ -126,7 +126,9 @@ class Register extends Component {
                         <Input type={'file'} id={'file'}/>
                     </div>
                     <div className={"login__btn-block"}>
+                    <Link to="/swipe">
                         <Input type={"submit"} value={"CONTINUE"} class_name={"login__btn"} name={"submit"} />
+                    </Link>
                     </div>
                 </form>
 

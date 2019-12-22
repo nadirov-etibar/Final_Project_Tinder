@@ -11,7 +11,7 @@ class Edit extends Component {
         return (
             <div className={"edit"}>
                 <div>
-                    <h2 className={"edit__header"}>create account</h2>
+                    <h2 className={"edit__header"}>edit account</h2>
                 </div>
                 <form className={"edit__form"}>
                     <div className={"edit__form-first"}>
