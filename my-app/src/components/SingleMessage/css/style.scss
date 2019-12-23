@@ -1,0 +1,26 @@
+.single-message{
+  &__text-other{
+    margin: 5px 20px;
+    display: flex;
+    border-radius: 25px;
+    background-color: white;
+  }
+
+  &__text-other > p{
+    color: cornflowerblue;
+  }
+
+  &__text-self{
+    align-self: flex-end;
+    margin: 5px 20px;
+    display: flex;
+    border-radius: 25px;
+    background-color: cornflowerblue;
+  }
+
+  &__text{
+    padding: 0 20px;
+    font-size: 15px;
+    color: white;
+  }
+}

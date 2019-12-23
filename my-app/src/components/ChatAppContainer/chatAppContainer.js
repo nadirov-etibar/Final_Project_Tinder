@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import MatchesWindow from "../MatchesWindow/matchesWindow";
 import ChatWindow from "../ChatWindow/ChatWindow";
 import UserInfo from "../UserInfo/userInfo";
+import "./css/style.scss";
 
 
 

@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import SingleMessage from "../SingleMessage/singleMessage";
+import "./css/style.scss";
+
 class ChatWindow extends Component {
     counterKey=0;
     render() {

@@ -1,0 +1,13 @@
+.matches {
+  background-color: white;
+  width: 20vw;
+  height: 93vh;
+
+  &__text {
+    text-align: center;
+    width: 125px;
+    color: cornflowerblue;
+    font-size: 20px;
+    font-weight: 600;
+  }
+}

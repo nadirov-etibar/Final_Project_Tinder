@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
+import "./css/style.scss";
 
 class Topic extends Component {
     render() {
         return (
-            <div className={"topic-container"}>
+            <div className={"topic"}>
 
-                    <img className={"topic-img-container"} src={this.props.image} alt="image"/>
+                    <img className={"topic__img-container"} src={this.props.image} alt="image"/>
 
-                <h4 className={"topic-header"}>{this.props.name}</h4>
+                <h4 className={"topic__header"}>{this.props.name}</h4>
             </div>
         );
     }

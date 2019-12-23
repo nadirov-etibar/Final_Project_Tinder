@@ -1,0 +1,36 @@
+.like{
+  &__modal-window{
+    border-radius: 3%;
+    outline:none;
+    position: fixed;
+    height: 500px;
+    width: 400px;
+    background: white;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  &__close{
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 2px solid darkgray;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+  &__close-element{
+    text-align: center;
+    border: 3px solid darkgrey;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    transition-duration: .2s;
+  }
+  &__cross{
+    margin-top: 3px;
+  }
+  &__close-element:hover{
+    transform: rotate(-90deg);
+  }
+}

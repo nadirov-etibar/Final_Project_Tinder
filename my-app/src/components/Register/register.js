@@ -15,6 +15,7 @@ class Register extends Component {
             email: "",
             pass: "",
             day: "",
+            imageUrl: "",
             errors: {
                 fullName: '',
                 email: '',
@@ -53,13 +54,52 @@ class Register extends Component {
         this.setState({errors, [name]: value});
     };
 
+    clickChange = () => {
+        if (document.getElementById("man").checked){
+            console.log(document.getElementById("man").value);
+        }
+        else if (document.getElementById("woman").checked){
+            console.log(document.getElementById("woman").value);
+        }
+    };
 
+    getVal = () => {
+        let day = document.getElementById("day").value;
+        let month = document.getElementById("month").value;
+        let year = document.getElementById("year").value;
 
+        let birthDay = day+"."+month+"."+year;
+
+        console.log(birthDay);
+    };
+
+    _onChange = (e) => {
+
+        const file    = this.refs.uploadImg.files[0];
+        const reader  = new FileReader();
+        reader.onloadend = () => {
+            this.setState({
+                imageUrl: reader.result
+            })
+        };
+        if (file) {
+            reader.readAsDataURL(file);
+            this.setState({
+                imageUrl :reader.result
+            })
+        }
+        else {
+            this.setState({
+                imageUrl: ""
+            })
+        }
+    };
 
     render() {
         const {fullName, email, pass, errors, day, month, year} = this.state;
         const eroors = !Object.keys(errors).some(x => errors[x]);
         const isEnabled =fullName.length > 0 && email.length > 0 && pass.length > 0 && eroors;
+        console.log(this.state.imageUrl)
         return (
             <div className={"register"}>
                 <div>
@@ -101,20 +141,27 @@ class Register extends Component {
                     <div className={"register__form-second"}>
                         <label>Gender</label>
                         <div className={"register__flex"}>
-                            <Input type={"radio"} name={'gender'} id={'man'} class_name={"register__gender"} onChange={this.onSiteChanged} req/>
+                            <Input type={"radio"} name={'gender'} id={'man'} class_name={"register__gender"} value={"Male"} onchange={this.clickChange}/>
                             <label htmlFor="man">Man</label>
-                            <Input type={"radio"}  name={'gender'} id={'woman'} class_name={"register__gender"} onChange={this.onSiteChanged} req/>
+                            <Input type={"radio"}  name={'gender'} id={'woman'} class_name={"register__gender"} value={"Female"} onchange={this.clickChange}/>
                             <label htmlFor="woman">Woman</label>
                         </div>
                         <label>Birthday</label>
                         <div className={"register__flex"}>
-                            <Input type={'text'} class_name={"register__date register__all-inputs"} placeholder={"DD"} maxlength={2} name={"day"}/>
-                            <Input type={'text'} class_name={"register__date register__all-inputs"} placeholder={"MM"} maxlength={2} name={"month"}/>
-                            <Input type={'text'} class_name={"register__date register__all-inputs"} placeholder={"YYYY"} maxlength={4} name={"year"}/>
+                            <Input type={'text'} class_name={"register__date register__all-inputs"} placeholder={"DD"} maxlength={2} name={"day"} id={"day"} onchange={this.getVal}/>
+                            <Input type={'text'} class_name={"register__date register__all-inputs"} placeholder={"MM"} maxlength={2} name={"month"} id={"month"} onchange={this.getVal}/>
+                            <Input type={'text'} class_name={"register__date register__all-inputs"} placeholder={"YYYY"} maxlength={4} name={"year"} id={"year"} onchange={this.getVal}/>
                         </div>
                         <label>Profile Photo</label>
                         <label htmlFor="file" className="register__file-upload register__all-inputs">Upload From Computer</label>
-                        <Input type={'file'} id={'file'} name={"file"} req/>
+                        <input
+                            ref="uploadImg"
+                            type="file"
+                            name="selectedFile"
+                            id="file"
+                            onChange={this._onChange}
+                            required
+                        />
                     </div>
                     <div className={"login__btn-block"}>
                     <Link to="/swipe">
@@ -125,7 +172,6 @@ class Register extends Component {
 
             </div>
         );
-
     }
 }
 
