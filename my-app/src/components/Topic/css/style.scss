@@ -1,0 +1,22 @@
+.topic{
+  border-radius: 10px;
+  width: 95%;
+  height: 92px;
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+
+  &__img-container{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px;
+  }
+
+  &__header{
+    margin: 0;
+  }
+}

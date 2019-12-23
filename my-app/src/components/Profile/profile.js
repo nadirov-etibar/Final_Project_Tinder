@@ -6,6 +6,7 @@ import {
     Link
   } from "react-router-dom";
 import Button from "../Button/button";
+import "./css/modal.scss";
 import "./css/style.scss";
 import Header from "../Header/header";
 import Modal from '@material-ui/core/Modal';
@@ -26,15 +27,20 @@ class Profile extends Component {
             btn: 'profile__circle-btn'
         };
 
+        const exitBtn = {
+            btn: 'profile__exit-btn'
+        };
+
         return (
-            <div >
+            <div>
                     <div className={"profile"}>
                         <div className={"profile__top"}>
                             <img src={this.state.imageUrl} alt="" className={"profile__img"}/>
                             <div className={"profile__info"}>
-                            <p className={"profile__name"}>Rauf</p>
-                            <p className={"profile__age"}>21</p>
+                                <p className={"profile__name"}>Rauf</p>
+                                <p className={"profile__age"}>21</p>
                             </div>
+                            <Button classes={btnClasses} value={"exit"}/>
                         </div>
                         <div className={"profile__bottom"}>
                            <Button classes={btnClasses} value={"like"} info={"Like"} function_name={this.handleOpen}/>
@@ -45,7 +51,23 @@ class Profile extends Component {
                                 className={"modal"}
                                 onClose={this.handleClose}
                             >
-                                <h2>this is modal page</h2>
+                                <div className={"like like__modal-window"}>
+                                    <div className={"like__close"}>
+                                        <svg className="like__tinder" viewBox="0 0 24 24" width="37px" height="37px" focusable="false"
+                                             aria-hidden="true" role="presentation">
+                                            <path d="M8.21 10.08c-.02 0-.04 0-.06-.02-.67-.9-.84-2.44-.89-3.03 0-.11-.13-.18-.23-.12C4.93 8.08 3 10.86 3 13.54 3 18.14 6.2 22 11.7 22c5.15 0 8.7-3.98 8.7-8.46 0-5.87-4.2-9.77-7.93-11.53a.13.13 0 0 0-.19.14c.48 3.16-.18 6.6-4.07 7.93z"
+                                                  fill="cornflowerblue"/>
+                                        </svg>
+                                        <div className={"like__close-element"} onClick={this.handleClose}>
+
+                                            <svg className="like__cross" viewBox="0 0 24 24" width="24px" height="24px"
+                                                 focusable="false" aria-hidden="true" role="presentation">
+                                                <path className="" fill={"cornflowerblue"}
+                                                      d="M14.926 12.56v-1.14l5.282 5.288c1.056.977 1.056 2.441 0 3.499-.813 1.057-2.438 1.057-3.413 0L11.512 15h1.138l-5.363 5.125c-.975 1.058-2.438 1.058-3.495 0-1.056-.813-1.056-2.44 0-3.417l5.201-5.288v1.14L3.873 7.27c-1.137-.976-1.137-2.44 0-3.417a1.973 1.973 0 0 1 3.251 0l5.282 5.207H11.27l5.444-5.207c.975-1.139 2.438-1.139 3.413 0 1.057.814 1.057 2.44 0 3.417l-5.2 5.288z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
                             </Modal>
                             <form action="" className={"profile__form"}>
                             <label htmlFor="file" className="profile__circle-btn-blue"><svg className="Sq(32px) Sq(28px)--xs profile__camera" viewBox="0 0 24 24" width="30px" height="30px"

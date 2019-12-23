@@ -67,8 +67,22 @@ class Register extends Component {
     //     }
     // };
 
+    clickChange = ()=> {
+        if (document.getElementById("man").checked){
+            console.log(document.getElementById("man").value);
+        }
+        else if (document.getElementById("woman").checked){
+            console.log(document.getElementById("woman").value);
+        }
+    };
+
+    getVal = () => {
+        document.getElementsByClassName("")
+    };
+
 
     render() {
+
         const {errors} = this.state;
         const isEnabled = Object.keys(errors).some(x => errors[x]);
 
@@ -110,16 +124,16 @@ class Register extends Component {
                     <div className={"register__form-second"}>
                         <label>Gender</label>
                         <div className={"register__flex"}>
-                            <Input type={"radio"} name={'gender'} id={'man'} class_name={"register__gender"} />
+                            <Input type={"radio"} name={'gender'} id={'man'} class_name={"register__gender"} value={"Male"} onchange={this.clickChange}/>
                             <label htmlFor="man">Man</label>
-                            <Input type={"radio"}  name={'gender'} id={'woman'} class_name={"register__gender"}/>
+                            <Input type={"radio"}  name={'gender'} id={'woman'} class_name={"register__gender"} value={"Female"} onchange={this.clickChange}/>
                             <label htmlFor="woman">Woman</label>
                         </div>
                         <label>Birthday</label>
                         <div className={"register__flex"}>
-                            <Input type={'text'} class_name={"register__date register__all-inputs"} placeholder={"DD"} maxlength={2}/>
-                            <Input type={'text'} class_name={"register__date register__all-inputs"} placeholder={"MM"} maxlength={2}/>
-                            <Input type={'text'} class_name={"register__date register__all-inputs"} placeholder={"YYYY"} maxlength={4}/>
+                            <Input type={'text'} class_name={"register__date register__all-inputs"} placeholder={"DD"} maxlength={2} id={"date"}/>
+                            <Input type={'text'} class_name={"register__date register__all-inputs"} placeholder={"MM"} maxlength={2} id={"month"}/>
+                            <Input type={'text'} class_name={"register__date register__all-inputs"} placeholder={"YYYY"} maxlength={4} id={"year"}/>
                         </div>
                         <label>Profile Photo</label>
                         <label htmlFor="file" className="register__file-upload register__all-inputs">Upload From Computer</label>
@@ -134,6 +148,9 @@ class Register extends Component {
 
             </div>
         );
+
+
+
     }
 }
 

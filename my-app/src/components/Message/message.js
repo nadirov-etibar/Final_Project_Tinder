@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Header from "../Header/header";
 import ChatAppContainer from "../ChatAppContainer/chatAppContainer";
 import MessageInput from "../MessageInput/messageInput";
+import "./css/style.scss";
+
 class Message extends Component {
 
     render() {
