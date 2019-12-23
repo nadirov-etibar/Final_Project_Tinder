@@ -28,7 +28,7 @@ class Header extends Component {
                         width="35px" 
                         height="35px"
                              focusable="false" aria-hidden="true" role="presentation">
-                            <g stroke="none" stroke-width="1">
+                            <g stroke="none" strokeWidth="1">
                             <Link to="/profile">
                                 <path className="heada"
                                       d="M16.085 13.026c1.285-.975 2.088-2.625 2.088-5.55 0-3-2.65-5.476-5.861-5.476C9.1 2 6.45 4.4 6.45 7.475c0 3 .803 4.726 2.168 5.7-2.73 1.576-5.38 4.576-4.416 6.076 2.007 3.525 15.095 3.75 16.7.15.643-1.725-2.006-4.65-4.817-6.375"/>
@@ -42,7 +42,7 @@ class Header extends Component {
                                  <Link to="/swipe">
                             <path className="heada header__active"
                                 d="M8.21 10.08c-.02 0-.04 0-.06-.02-.67-.9-.84-2.44-.89-3.03 0-.11-.13-.18-.23-.12C4.93 8.08 3 10.86 3 13.54 3 18.14 6.2 22 11.7 22c5.15 0 8.7-3.98 8.7-8.46 0-5.87-4.2-9.77-7.93-11.53a.13.13 0 0 0-.19.14c.48 3.16-.18 6.6-4.07 7.93z"
-                                fill-rule="nonzero"/>
+                                fillRule="nonzero"/>
                             </Link>
                         </svg>
                         
