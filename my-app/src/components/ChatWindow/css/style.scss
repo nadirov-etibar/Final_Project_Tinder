@@ -1,0 +1,10 @@
+.chat-container{
+  border: 1px solid #5a5a5a1a;
+  width: 67vw;
+  height: 95%;
+  background-color: #f4f4ff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: scroll;
+}

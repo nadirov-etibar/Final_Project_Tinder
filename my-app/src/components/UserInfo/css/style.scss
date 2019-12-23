@@ -1,0 +1,25 @@
+.user{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+
+  &__msg-info-img{
+    width: 15vw;
+    height: 16vw;
+  }
+
+  &__msg-info-header{
+    font-size: 17px;
+    text-align: start;
+    margin: 15px 10px;
+  }
+
+  &__msg-info-text{
+    text-align: center;
+    width: 15vw;
+    color: #c1c1c1;
+    font-size: 15px;
+    margin: 15px 10px;
+  }
+}
